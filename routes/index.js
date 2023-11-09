@@ -1,19 +1,14 @@
 import express from "express";
-import myDB from "../db/myMongoDB.js";
+//import myDB from "../db/myMongoDB.js";
 
 export const router = express.Router();
 
 /* GET home page. */
-router.get("/api", async (req, res) {
-  try{
-
-  }catch{
-
-  }
-  return 
-  
+router.get("/api/data", function (req, res) {
+  res.json([1, 2, 3, 4, 66]);
 });
 
+/*
 router.post("/users/login", bodyParser.json(), async (req, res) => {
   const { email, password } = req.body;
   myDB.getUser({ email: email }).then((existingUser) => {
@@ -70,5 +65,5 @@ router.post("/users/register", bodyParser.json(), async (req, res) => {
     }
   });
 });
-
+*/
 export default router;
