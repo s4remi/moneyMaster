@@ -9,7 +9,7 @@ function MyMongoDB() {
   const connect = () => {
     const client = new MongoClient(connection_url);
     console.log(`thi is a connection url: ${connection_url}`);
-    const db = client.db("moneyMaster");
+    const db = client.db("monyMaster");
     return { client, db };
   };
 
@@ -17,6 +17,7 @@ function MyMongoDB() {
     const { client, db } = connect();
     try {
       const datas = await db.collection("data").find(query).toArray();
+      console.log("in db\n", datas);
       return datas;
     } finally {
       await client.close();
