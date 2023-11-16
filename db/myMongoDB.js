@@ -13,16 +13,29 @@ function MyMongoDB() {
     return { client, db };
   };
 
-  myDB.getDatas = async function (query = {}) {
+  myDB.getPhotos = async function ({ query = "", limit = 20 } = {}) {
     const { client, db } = connect();
+    const queryObj = { caption: { $regex: `${query}`, $options: "i" } };
+    console.log("query photos", query, queryObj);
     try {
-      const datas = await db.collection("data").find(query).toArray();
-      console.log("in db\n", datas);
-      return datas;
+      const photos = await db
+        .collection("photos")
+        .find(queryObj)
+        .limit(limit)
+        .toArray();
+
+      return photos;
     } finally {
       await client.close();
     }
   };
+
+  return myDB;
+}
+const myDB = MyMongoDB();
+export default myDB;
+
+/*
 
   // myDB.getUser = async (query = {}) => {
   //   const { client, db } = connect();
@@ -42,8 +55,4 @@ function MyMongoDB() {
   //     await client.close();
   //   }
   // };
-
-  return myDB;
-}
-const myDB = MyMongoDB();
-export default myDB;
+  */
