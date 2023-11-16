@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import PhotosPage from "./pages/PhotosPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PhotosPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+]);
+
+export const ErrorContext = createContext(null);
+
+function RootComponent() {
+  const [error, setError] = useState({
+    type: "danger",
+    msg: "",
+  });
+
+  return (
+    <React.StrictMode>
+      <ErrorContext.Provider value={{ setError, error }}>
+        <RouterProvider router={router} />
+      </ErrorContext.Provider>
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<RootComponent />);

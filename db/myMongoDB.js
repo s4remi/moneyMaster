@@ -13,18 +13,18 @@ function MyMongoDB() {
     return { client, db };
   };
 
-  myDB.getPhotos = async function ({ query = "", limit = 20 } = {}) {
+  myDB.getData = async function ({ query = "", limit = 20 } = {}) {
     const { client, db } = connect();
     const queryObj = { caption: { $regex: `${query}`, $options: "i" } };
-    console.log("query photos", query, queryObj);
+    console.log("query data", query, queryObj);
     try {
-      const photos = await db
-        .collection("photos")
+      const datas = await db
+        .collection("data")
         .find(queryObj)
         .limit(limit)
         .toArray();
 
-      return photos;
+      return datas;
     } finally {
       await client.close();
     }
