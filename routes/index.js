@@ -11,7 +11,7 @@ router.get("/api/data", async function (req, res) {
   console.log("/api/data query", query);
 
   try {
-    const datas = await myDB.getPhotos({ query });
+    const datas = await myDB.getDatas({ query });
     console.log("got Data", datas.length);
     res.status(200).json({ datas });
   } catch (err) {

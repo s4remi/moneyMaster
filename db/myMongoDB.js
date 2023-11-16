@@ -13,7 +13,7 @@ function MyMongoDB() {
     return { client, db };
   };
 
-  myDB.getData = async function ({ query = "", limit = 20 } = {}) {
+  myDB.getDatas = async function ({ query = "", limit = 20 } = {}) {
     const { client, db } = connect();
     const queryObj = { caption: { $regex: `${query}`, $options: "i" } };
     console.log("query data", query, queryObj);
