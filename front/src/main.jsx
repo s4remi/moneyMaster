@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react";
 import ReactDOM from "react-dom/client";
-import PhotosPage from "./pages/DatasPage.jsx";
+import DatasPage from "./pages/DatasPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PhotosPage />,
+    element: <DatasPage />,
     errorElement: <ErrorPage />,
   },
   {
