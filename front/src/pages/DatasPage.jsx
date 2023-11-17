@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { ButtonVote } from "../components/ButtonVote";
-import { PhotosGallery } from "../components/PhotosGallery";
 import { useState, useEffect } from "react";
-
+import { DatasGallery } from "../components/DatasGallery";
 import { RangeWidth } from "../components/RangeWidth";
 import { SearchBar } from "../components/SearchBar";
 import BasePage from "./BasePage";
@@ -49,11 +48,11 @@ export default function DatasPage() {
           <RangeWidth />
 
           <SearchBar query={query} setQuery={setQuery} />
-          <PhotosGallery
+          <DatasGallery
             photos={datas
               // .filter((d) => d.caption.includes(query))// front end filtering
               .slice(0, 20)}
-          ></PhotosGallery>
+          ></DatasGallery>
 
           <ButtonVote name="Biden" />
           <ButtonVote name="Trump" />
