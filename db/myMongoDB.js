@@ -29,6 +29,28 @@ function MyMongoDB() {
       await client.close();
     }
   };
+  myDB.insertUser = async function (user) {
+    const { client, db } = connect();
+
+    console.log("insert User", user.username);
+    try {
+      const response = await db.collection("users").insertOne(user);
+
+      return response;
+    } finally {
+      await client.close();
+    }
+  };
+  myDB.getUserByUsername = async function (username) {
+    const { client, db } = connect();
+
+    console.log("get User", username);
+    try {
+      return await db.collection("users").findOne({ username });
+    } finally {
+      await client.close();
+    }
+  };
 
   return myDB;
 }
