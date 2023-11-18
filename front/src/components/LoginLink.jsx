@@ -9,7 +9,7 @@ export function LoginLink() {
     <>
       {user ? (
         <div>
-          Welcome {user}{" "}
+          Welcome: {user}{" "}
           <button className="nav-link" onClick={onLogout}>
             Logout
           </button>

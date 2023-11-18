@@ -15,14 +15,15 @@ function MyMongoDB() {
 
   myDB.getDatas = async function ({ query = "", limit = 20 } = {}) {
     const { client, db } = connect();
-    const queryObj = { caption: { $regex: `${query}`, $options: "i" } };
+    const queryObj = { opening_date: { $regex: `${query}`, $options: "i" } };
     console.log("query data", query, queryObj);
     try {
       const datas = await db
-        .collection("data")
+        .collection("datas")
         .find(queryObj)
         .limit(limit)
         .toArray();
+      console.log("in DB getting data", datas);
 
       return datas;
     } finally {

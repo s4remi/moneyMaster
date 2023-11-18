@@ -6,7 +6,7 @@ export function AppNavBar() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Photo Sharing App
+          Money Master App
         </Link>
         <button
           className="navbar-toggler"
@@ -23,7 +23,7 @@ export function AppNavBar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-                Photos
+                Datas
               </Link>
             </li>
             <li className="nav-item">

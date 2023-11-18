@@ -20,7 +20,7 @@ export default function DatasPage() {
   useEffect(() => {
     async function fetchDatas() {
       console.log("⭐️Fecthing Datas...");
-      const response = await fetch(`/api/data?query=${query}`);
+      const response = await fetch(`/api/datas?query=${query}`);
       if (!response.ok) {
         console.log("Error fetching datas", response);
 
@@ -49,13 +49,13 @@ export default function DatasPage() {
 
           <SearchBar query={query} setQuery={setQuery} />
           <DatasGallery
-            photos={datas
+            datas={datas
               // .filter((d) => d.caption.includes(query))// front end filtering
-              .slice(0, 20)}
+              .slice(0, 5)}
           ></DatasGallery>
 
-          <ButtonVote name="Biden" />
-          <ButtonVote name="Trump" />
+          {/* <ButtonVote name="Biden" /> */}
+          {/* <ButtonVote name="Trump" /> */}
         </>
       ) : (
         <div>Not logged in</div>

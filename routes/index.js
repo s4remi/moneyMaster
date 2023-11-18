@@ -4,11 +4,11 @@ import myDB from "../db/myMongoDB.js";
 let router = express.Router();
 
 /* GET home page. */
-router.get("/api/data", async function (req, res) {
+router.get("/api/datas", async function (req, res) {
   // Consider validating the input
   const query = req.query.query || "";
 
-  console.log("/api/data query", query);
+  console.log("in index.js /api/datas query", query);
 
   try {
     const datas = await myDB.getDatas({ query });
