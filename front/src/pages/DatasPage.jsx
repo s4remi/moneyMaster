@@ -41,15 +41,12 @@ export default function DatasPage() {
   }, [user, query, setError]);
 
   const handleEdit = (id) => {
-    // Handle edit action
-    // ...
-    console.log(`Edit clicked for ID: ${id}`);
+    // Implement edit logic using the id
+    console.log(`Edit clicked for data with id ${id}`);
   };
-
   const handleDelete = (id) => {
-    // Handle delete action
-    // ...
-    console.log(`Delete clicked for ID: ${id}`);
+    // Implement delete logic using the id
+    console.log(`Delete clicked for data with id ${id}`);
   };
 
   return (
@@ -60,17 +57,14 @@ export default function DatasPage() {
         <>
           {/* <RangeWidth /> */}
           <MainSc />
-          <SearchBar
-            query={query}
-            setQuery={setQuery}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-            searchResults={datas}
-          />
+          <SearchBar query={query} setQuery={setQuery} />
           <DatasGallery
             datas={datas
               // .filter((d) => d.caption.includes(query))// front end filtering
               .slice(0, 20)}
+            showButtons={query !== ""}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
           ></DatasGallery>
 
           {/* <ButtonVote name="Biden" /> */}

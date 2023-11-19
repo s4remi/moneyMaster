@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function DatasGallery({ datas }) {
+export function DatasGallery({ datas, showButtons = false, onEdit, onDelete }) {
   console.log("👏🏻 Render DatasGallery datas=", datas);
 
   function renderDatas() {
@@ -18,6 +18,12 @@ export function DatasGallery({ datas }) {
           <div>is_active: {data.is_active}</div>
           <div>expenses: {data.expenses}</div>
           <div>earnings: {data.earnings}</div>
+          {showButtons && (
+            <div>
+              <button onClick={() => onEdit(data._id)}>Edit</button>
+              <button onClick={() => onDelete(data._id)}>Delete</button>
+            </div>
+          )}
           <hr />
         </div>
       );
@@ -46,4 +52,7 @@ DatasGallery.propTypes = {
       earnings: PropTypes.string.isRequired,
     })
   ),
+  showButtons: PropTypes.bool,
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
 };
