@@ -53,6 +53,23 @@ function MyMongoDB() {
     }
   };
 
+  myDB.createProject = async (bankObject) => {
+    let client;
+    try {
+      console.log("Creating project...");
+      client = new MongoClient(connection_url, { useUnifiedTopology: true });
+      await client.connect();
+      console.log("Connecting to monyMaster DB...");
+      const db = client.db("monyMaster");
+      const banksCollection = db.collection("datas");
+      const result = await banksCollection.insertOne(bankObject);
+      console.log("created bank account");
+      return result;
+    } finally {
+      client.close();
+    }
+  };
+
   return myDB;
 }
 const myDB = MyMongoDB();

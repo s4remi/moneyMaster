@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { ButtonVote } from "../components/ButtonVote";
+//import { ButtonVote } from "../components/ButtonVote";
 import { useState, useEffect } from "react";
 import { DatasGallery } from "../components/DatasGallery";
-import { RangeWidth } from "../components/RangeWidth";
+//import { RangeWidth } from "../components/RangeWidth";
 import { SearchBar } from "../components/SearchBar";
 import BasePage from "./BasePage";
 import { ErrorContext } from "../main";
 import { useGetUser } from "../hooks/useGetUser";
+import { MainSc } from "../components/MainSc";
 
 export default function DatasPage() {
   const { setError } = useContext(ErrorContext);
@@ -45,13 +46,13 @@ export default function DatasPage() {
 
       {user ? (
         <>
-          <RangeWidth />
-
+          {/* <RangeWidth /> */}
+          <MainSc />
           <SearchBar query={query} setQuery={setQuery} />
           <DatasGallery
             datas={datas
               // .filter((d) => d.caption.includes(query))// front end filtering
-              .slice(0, 5)}
+              .slice(0, 20)}
           ></DatasGallery>
 
           {/* <ButtonVote name="Biden" /> */}

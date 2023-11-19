@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.js";
 import authRouter from "./routes/auth.js";
+import projectsRouter from "./routes/bankAccs.js";
 
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -20,6 +21,7 @@ const __dirname = dirname(__filename);
 
 let app = express();
 
+// login
 const myStrategy = new LocalStrategy(async function verify(
   username,
   password,
@@ -105,5 +107,6 @@ app.use(passport.authenticate("session"));
 
 app.use("/", indexRouter);
 app.use("/", authRouter);
+app.use("/", projectsRouter);
 
 export default app;
