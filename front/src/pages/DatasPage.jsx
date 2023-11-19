@@ -40,6 +40,18 @@ export default function DatasPage() {
     fetchDatas();
   }, [user, query, setError]);
 
+  const handleEdit = (id) => {
+    // Handle edit action
+    // ...
+    console.log(`Edit clicked for ID: ${id}`);
+  };
+
+  const handleDelete = (id) => {
+    // Handle delete action
+    // ...
+    console.log(`Delete clicked for ID: ${id}`);
+  };
+
   return (
     <BasePage>
       <h1>MoneyMaster Application</h1>
@@ -48,7 +60,13 @@ export default function DatasPage() {
         <>
           {/* <RangeWidth /> */}
           <MainSc />
-          <SearchBar query={query} setQuery={setQuery} />
+          <SearchBar
+            query={query}
+            setQuery={setQuery}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+            searchResults={datas}
+          />
           <DatasGallery
             datas={datas
               // .filter((d) => d.caption.includes(query))// front end filtering
