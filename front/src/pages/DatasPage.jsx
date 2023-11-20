@@ -8,15 +8,15 @@ import BasePage from "./BasePage";
 import { ErrorContext } from "../main";
 import { useGetUser } from "../hooks/useGetUser";
 import { MainSc } from "../components/MainSc";
+import { useHistory } from "react-router-dom";
 
 export default function DatasPage() {
   const { setError } = useContext(ErrorContext);
-
   const { user } = useGetUser();
-
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
-  const [editData, setEditData] = useState(null);
+
+  const history = useHistory();
 
   // setup an effect that fetches data exactly once (empty array as secondary argument)
   useEffect(() => {
@@ -25,7 +25,6 @@ export default function DatasPage() {
       const response = await fetch(`/api/datas?query=${query}`);
       if (!response.ok) {
         console.log("Error fetching datas", response);
-
         setDatas([]);
         setError({ msg: "Error fetching datas", type: "danger" });
         return;
@@ -65,25 +64,8 @@ export default function DatasPage() {
 
   const handleEdit = async (id) => {
     console.log(`Edit clicked for data with id ${id}`);
-    try {
-      const response = await fetch(`/api/bankAccs/${id}`);
-      if (response.ok) {
-        const data = await response.json();
-        setEditData(data);
-        console.log(`Editing bank account with ID ${id}`);
-      } else {
-        console.error(
-          `Error fetching details for editing bank account with ID ${id}.`
-        );
-      }
-    } catch (error) {
-      console.error(
-        "An error occurred while fetching details for editing the bank account.",
-        error
-      );
-    }
+    history.push(`/edit/${id}`);
   };
-
   return (
     <BasePage>
       <h1>MoneyMaster Application</h1>
@@ -126,4 +108,30 @@ export default function DatasPage() {
       // Update the state with the modified datas array
       setDatas(updatedDatas);
     }
+*/
+
+/*
+editing the data in place
+const handleEdit = async (id) => {
+    console.log(`Edit clicked for data with id ${id}`);
+    try {
+      const response = await fetch(`/api/bankAccs/${id}`, {
+        method: "PUT",
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setEditData(data);
+        console.log(`Editing bank account with ID ${id}`);
+      } else {
+        console.error(
+          `Error fetching details for editing bank account with ID ${id}.`
+        );
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred while fetching details for editing the bank account.",
+        error
+      );
+    }
+  };
 */

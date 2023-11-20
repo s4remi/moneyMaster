@@ -9,13 +9,6 @@ router.post("/api/bankAccs", async (req, res) => {
     res.send(postResult);
   }
 });
-// get all of the users projects
-// router.get("/:id", async (req, res) => {
-//   const bankArray = await myDB.getUserBankAccounts(req.params.id);
-//   if (bankArray) {
-//     res.send(bankArray);
-//   }
-// });
 
 // PUT (update) a specific data by ID
 router.put("/api/bankAccs/:id", async (req, res) => {
@@ -32,3 +25,13 @@ router.delete("/api/bankAccs/:id", async (req, res) => {
   res.json(result);
 });
 export default router;
+
+/*
+get all of the users projects
+router.get("/:id", async (req, res) => {
+  const bankArray = await myDB.getUserBankAccounts(req.params.id);
+  if (bankArray) {
+    res.send(bankArray);
+  }
+});
+*/

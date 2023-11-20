@@ -81,22 +81,6 @@ function MyMongoDB() {
       await client.close();
     }
   };
-  // myDB.getUserBankAccounts = async function (userId) {
-  //   let client;
-  //   try {
-  //     console.log("Getting bank accounts...");
-  //     client = new MongoClient(connection_url, { useUnifiedTopology: true });
-  //     await client.connect();
-  //     console.log("Connecting to DB...");
-  //     const db = client.db("monyMaster");
-  //     const datasCollection = db.collection("datas");
-  //     const results = await datasCollection.find({ ownerId: userId }).toArray();
-  //     console.log("got user's bank accounts");
-  //     return results;
-  //   } finally {
-  //     client.close();
-  //   }
-  // };
 
   myDB.deleteBankAccount = async (bankId) => {
     let client;
@@ -147,6 +131,23 @@ function MyMongoDB() {
 }
 const myDB = MyMongoDB();
 export default myDB;
+
+// myDB.getUserBankAccounts = async function (userId) {
+//   let client;
+//   try {
+//     console.log("Getting bank accounts...");
+//     client = new MongoClient(connection_url, { useUnifiedTopology: true });
+//     await client.connect();
+//     console.log("Connecting to DB...");
+//     const db = client.db("monyMaster");
+//     const datasCollection = db.collection("datas");
+//     const results = await datasCollection.find({ ownerId: userId }).toArray();
+//     console.log("got user's bank accounts");
+//     return results;
+//   } finally {
+//     client.close();
+//   }
+// };
 
 /*
 

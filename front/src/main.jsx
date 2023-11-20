@@ -4,6 +4,7 @@ import DatasPage from "./pages/DatasPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import EditPage from "./pages/EditPage.jsx";
 
 import "./index.css";
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/edit/:id",
+    element: <EditPage />,
   },
 ]);
 
