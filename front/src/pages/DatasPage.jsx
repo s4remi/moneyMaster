@@ -16,6 +16,7 @@ export default function DatasPage() {
 
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
+  const [editData, setEditData] = useState(null);
 
   // setup an effect that fetches data exactly once (empty array as secondary argument)
   useEffect(() => {
@@ -40,13 +41,47 @@ export default function DatasPage() {
     fetchDatas();
   }, [user, query, setError]);
 
-  const handleEdit = (id) => {
-    // Implement edit logic using the id
-    console.log(`Edit clicked for data with id ${id}`);
+  const handleDelete = async (id) => {
+    console.log(`delete clicked for data with id ${id}`);
+    try {
+      const response = await fetch(`/api/bankAccs/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        const updatedDatas = datas.filter((data) => data._id !== id);
+        setDatas(updatedDatas);
+        console.log(`Bank account with ID ${id} deleted successfully.`);
+      } else {
+        console.error(`Error deleting bank account with ID ${id}.`);
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred while deleting the bank account.",
+        error
+      );
+    }
   };
-  const handleDelete = (id) => {
-    // Implement delete logic using the id
-    console.log(`Delete clicked for data with id ${id}`);
+
+  const handleEdit = async (id) => {
+    console.log(`Edit clicked for data with id ${id}`);
+    try {
+      const response = await fetch(`/api/bankAccs/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setEditData(data);
+        console.log(`Editing bank account with ID ${id}`);
+      } else {
+        console.error(
+          `Error fetching details for editing bank account with ID ${id}.`
+        );
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred while fetching details for editing the bank account.",
+        error
+      );
+    }
   };
 
   return (
@@ -76,3 +111,19 @@ export default function DatasPage() {
     </BasePage>
   );
 }
+
+/*
+// Implement delete logic using the id in front not in the back
+    console.log(`Delete clicked for data with id ${id}`);
+    const dataIndex = datas.findIndex((data) => data._id === id);
+    if (dataIndex !== -1) {
+      // Create a copy of the datas array
+      const updatedDatas = [...datas];
+
+      // Remove the data at the found index
+      updatedDatas.splice(dataIndex, 1);
+
+      // Update the state with the modified datas array
+      setDatas(updatedDatas);
+    }
+*/

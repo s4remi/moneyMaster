@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+import { ObjectId } from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -53,8 +54,8 @@ function MyMongoDB() {
     }
   };
 
-  myDB.createProject = async (bankObject) => {
-    let client;
+  /*
+  let client;
     try {
       console.log("Creating project...");
       client = new MongoClient(connection_url, { useUnifiedTopology: true });
@@ -64,6 +65,78 @@ function MyMongoDB() {
       const banksCollection = db.collection("datas");
       const result = await banksCollection.insertOne(bankObject);
       console.log("created bank account");
+      return result;
+    } finally {
+      client.close();
+    }
+  */
+  myDB.createBankAccount = async (bankObject) => {
+    const { client, db } = connect();
+    try {
+      console.log("Creating project...");
+      const result = await db.collection("datas").insertOne(bankObject);
+      console.log("created bank account");
+      return result;
+    } finally {
+      await client.close();
+    }
+  };
+  // myDB.getUserBankAccounts = async function (userId) {
+  //   let client;
+  //   try {
+  //     console.log("Getting bank accounts...");
+  //     client = new MongoClient(connection_url, { useUnifiedTopology: true });
+  //     await client.connect();
+  //     console.log("Connecting to DB...");
+  //     const db = client.db("monyMaster");
+  //     const datasCollection = db.collection("datas");
+  //     const results = await datasCollection.find({ ownerId: userId }).toArray();
+  //     console.log("got user's bank accounts");
+  //     return results;
+  //   } finally {
+  //     client.close();
+  //   }
+  // };
+
+  myDB.deleteBankAccount = async (bankId) => {
+    let client;
+    try {
+      console.log("Deleting bank account");
+      client = new MongoClient(connection_url, { useUnifiedTopology: true });
+      await client.connect();
+      console.log("connecting to the db");
+      const db = client.db("monyMaster");
+      const datasCollection = db.collection("datas");
+      const result = await datasCollection.findOneAndDelete({
+        _id: new ObjectId(bankId),
+      });
+      console.log("deleted bank account");
+    } finally {
+      client.close();
+    }
+  };
+
+  myDB.updateBankAccount = async (bankId, newName, newDescription) => {
+    let client;
+    try {
+      console.log("Updating bank account");
+      client = new MongoClient(connection_url, { useUnifiedTopology: true });
+      await client.connect();
+      console.log("connecting to the db");
+      const db = client.db("moneyMaster");
+      const datasCollection = db.collection("datas");
+      const result = await datasCollection.findOneAndUpdate(
+        {
+          _id: new ObjectId(bankId),
+        },
+        {
+          $set: {
+            projectName: newName,
+            projectDescription: newDescription,
+          },
+        }
+      );
+      console.log("got bank account");
       return result;
     } finally {
       client.close();
