@@ -21,7 +21,6 @@ export function MainSc() {
       is_active: formData.get("is_active"),
       expenses: formData.get("expenses"),
       earnings: formData.get("earnings"),
-      ownerId: "replace_with_owner_id",
     };
     try {
       // Send form data to the server

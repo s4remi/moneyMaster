@@ -8,7 +8,7 @@ import BasePage from "./BasePage";
 import { ErrorContext } from "../main";
 import { useGetUser } from "../hooks/useGetUser";
 import { MainSc } from "../components/MainSc";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function DatasPage() {
   const { setError } = useContext(ErrorContext);
@@ -16,7 +16,7 @@ export default function DatasPage() {
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // setup an effect that fetches data exactly once (empty array as secondary argument)
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function DatasPage() {
 
   const handleEdit = async (id) => {
     console.log(`Edit clicked for data with id ${id}`);
-    history.push(`/edit/${id}`);
+    navigate(`/edit/${id}`);
   };
   return (
     <BasePage>

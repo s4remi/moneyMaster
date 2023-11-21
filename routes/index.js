@@ -8,7 +8,7 @@ router.get("/api/datas", async function (req, res) {
   // Consider validating the input
   const query = req.query.query || "";
 
-  console.log("in index.js /api/datas query", query);
+  console.log("Request received at /api/datas with query:", query);
 
   try {
     const datas = await myDB.getDatas({ query });

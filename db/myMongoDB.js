@@ -16,7 +16,7 @@ function MyMongoDB() {
 
   myDB.getDatas = async function ({ query = "", limit = 20 } = {}) {
     const { client, db } = connect();
-    const queryObj = { opening_date: { $regex: `${query}`, $options: "i" } };
+    const queryObj = { account_number: { $regex: `${query}`, $options: "i" } };
     console.log("query data", query, queryObj);
     try {
       const datas = await db
@@ -94,36 +94,27 @@ function MyMongoDB() {
       const result = await datasCollection.findOneAndDelete({
         _id: new ObjectId(bankId),
       });
-      console.log("deleted bank account");
+      console.log("deleted bank account", result);
     } finally {
       client.close();
     }
   };
 
-  myDB.updateBankAccount = async (bankId, newName, newDescription) => {
-    let client;
+  myDB.updateBankAccount = async (bankId, updatedData) => {
+    const { client, db } = connect();
     try {
-      console.log("Updating bank account");
-      client = new MongoClient(connection_url, { useUnifiedTopology: true });
-      await client.connect();
-      console.log("connecting to the db");
-      const db = client.db("moneyMaster");
-      const datasCollection = db.collection("datas");
-      const result = await datasCollection.findOneAndUpdate(
-        {
-          _id: new ObjectId(bankId),
-        },
-        {
-          $set: {
-            projectName: newName,
-            projectDescription: newDescription,
-          },
-        }
-      );
-      console.log("got bank account");
-      return result;
+      console.log("Updating bank account with ID:", bankId);
+      const result = await db
+        .collection("datas")
+        .findOneAndUpdate(
+          { _id: new ObjectId(bankId) },
+          { $set: updatedData },
+          { returnDocument: "after" }
+        );
+      console.log("Updated bank account:", result.value);
+      return result.value;
     } finally {
-      client.close();
+      await client.close();
     }
   };
 
@@ -170,3 +161,18 @@ export default myDB;
   //   }
   // };
   */
+
+/*
+ myDB.getBankAccountById = async function (id) {
+    const { client, db } = connect();
+    try {
+      const bankObject = await db
+        .collection("datas")
+        .findOne({ _id: new ObjectId(id) });
+      return bankObject;
+    } finally {
+      await client.close();
+    }
+  };
+
+*/
