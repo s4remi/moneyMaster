@@ -176,3 +176,18 @@ export default myDB;
   };
 
 */
+
+/*
+account_number:881551618-2
+balance: 783149.26
+currency: SEK
+opening_date: 4/30/2016
+last_transaction_date: 10/26/2021
+interest_rate: 9.84
+account_type: Savings
+credit_limit: 17415.17
+is_active: false
+expenses: 394388.67
+earnings: 828826.35
+
+*/

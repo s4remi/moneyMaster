@@ -8,6 +8,10 @@ import BasePage from "./BasePage";
 import { ErrorContext } from "../main";
 import { useGetUser } from "../hooks/useGetUser";
 import { MainSc } from "../components/MainSc";
+//import { BankSummary } from "../components/BankSummary";
+import Header from "../components/Header/Header";
+import CoreConcepts from "../components/CoreConcepts";
+import Examples from "../components/Examples";
 import { useNavigate } from "react-router-dom";
 
 export default function DatasPage() {
@@ -15,7 +19,6 @@ export default function DatasPage() {
   const { user } = useGetUser();
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
-
   const navigate = useNavigate();
 
   // setup an effect that fetches data exactly once (empty array as secondary argument)
@@ -73,6 +76,7 @@ export default function DatasPage() {
       {user ? (
         <>
           {/* <RangeWidth /> */}
+          {/* <BankSummary /> */}
           <MainSc />
           <SearchBar query={query} setQuery={setQuery} />
           <DatasGallery
@@ -88,7 +92,17 @@ export default function DatasPage() {
           {/* <ButtonVote name="Trump" /> */}
         </>
       ) : (
-        <div>Not logged in</div>
+        <div>
+          <em>
+            <span>Welcome To Money Master</span>
+          </em>
+
+          <Header />
+          <main>
+            <CoreConcepts />
+            <Examples />
+          </main>
+        </div>
       )}
     </BasePage>
   );

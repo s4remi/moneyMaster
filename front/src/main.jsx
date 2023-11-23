@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import DatasPage from "./pages/DatasPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import LoginPage from "./pages/LoginPage.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import EditPage from "./pages/EditPage.jsx";
 
 import "./index.css";
