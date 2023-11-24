@@ -1,13 +1,19 @@
 import { useRef } from "react";
-
+import { useState } from "react";
 import { useContext } from "react";
 import BasePage from "../BasePage";
+import "./LoginPage.css";
 
 import { ErrorContext } from "../../main";
 
 export default function LoginPage() {
   const loginFormRef = useRef(null);
   const { setError } = useContext(ErrorContext);
+  const [isSignUpActive, setIsSignUpActive] = useState(true);
+
+  const containerStyle = {
+    left: isSignUpActive ? "50%" : "0",
+  };
 
   async function onSignUp() {
     const formData = new FormData(loginFormRef.current);
@@ -57,6 +63,11 @@ export default function LoginPage() {
     );
   };
   const SignUpForm = () => {
+    const handleSignUp = () => {
+      setIsSignUpActive(true);
+      onSignUp();
+    };
+
     return (
       <form ref={loginFormRef} action="/api/login/password" method="post">
         <h1>Create Account</h1>
@@ -76,31 +87,51 @@ export default function LoginPage() {
           placeholder="Password"
           name="password"
         />
-        <button type="button" onClick={onSignUp}>
+        <button type="button" onClick={handleSignUp}>
           Sign Up
         </button>
       </form>
     );
   };
   // Toggle container component
+  // Toggle container component
   const ToggleContainer = () => {
     return (
-      <div className="toggle-container">
+      <div
+        className="toggle-container"
+        style={{ left: isSignUpActive ? "50%" : "0" }}
+      >
         <div className="toggle">
-          <div className="toggle-panel toggle-left">
+          <div
+            className={`toggle-panel toggle-left ${
+              !isSignUpActive ? "active" : ""
+            }`}
+          >
             <h1>Welcome Back!</h1>
             <p>Enter your personal details to use all of the site features</p>
-            <button className="hidden" id="login">
+            <button
+              className="hidden"
+              id="login"
+              onClick={() => setIsSignUpActive(false)}
+            >
               Sign In
             </button>
           </div>
-          <div className="toggle-panel toggle-right">
+          <div
+            className={`toggle-panel toggle-right ${
+              isSignUpActive ? "active" : ""
+            }`}
+          >
             <h1>Hello!</h1>
             <p>
               Register with your personal details to use all of the site
               features
             </p>
-            <button className="hidden" id="register">
+            <button
+              className="hidden"
+              id="register"
+              onClick={() => setIsSignUpActive(true)}
+            >
               Sign Up
             </button>
           </div>
@@ -111,15 +142,21 @@ export default function LoginPage() {
 
   return (
     <BasePage>
-      <div className="container" id="container">
-        <div className="form-container sign-up">
-          <SignUpForm />
-        </div>
+      <div className="container" id="container" style={containerStyle}>
+        {isSignUpActive ? (
+          <div className="form-container sign-up">
+            <SignUpForm />
+          </div>
+        ) : (
+          <div className="form-container sign-in">
+            <SignInForm />
+          </div>
+        )}
       </div>
-      <div className="form-container sign-in">
-        <SignInForm />
-      </div>
-      <ToggleContainer />
+      <ToggleContainer
+        isSignUpActive={isSignUpActive}
+        setIsSignUpActive={setIsSignUpActive}
+      />
     </BasePage>
   );
 }
