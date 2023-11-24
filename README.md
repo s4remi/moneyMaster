@@ -7,7 +7,33 @@ Createed by Ali Saremi
 Design Document:
 slides:
 
-##Demo
+## Demo
 
 Walkthrough Video
 Website Link:
+
+## Installation
+
+To set up moneyMaster, you'll need the following:
+
+Clone the repository: git@github.com:s4remi/moneyMaster.git
+
+## Navigate to the root directory:
+
+```
+cd moneyMaster
+
+
+## Install dependencies:
+```
+
+npm install
+cd front
+npm install
+npm run build
+cd..
+npm start
+
+```
+## Dependencies:
+```
