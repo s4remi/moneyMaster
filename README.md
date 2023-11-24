@@ -22,11 +22,11 @@ Clone the repository: git@github.com:s4remi/moneyMaster.git
 
 ```
 cd moneyMaster
-
-
-## Install dependencies:
 ```
 
+## Install dependencies:
+
+```
 npm install
 cd front
 npm install
@@ -35,5 +35,33 @@ cd..
 npm start
 
 ```
-## Dependencies:
+
+## Dependencies: Back-end
+
 ```
+"cookie-parser": "~1.4.4",
+"crypto": "^1.0.1",
+"debug": "~2.6.9",
+"dotenv": "^16.3.1",
+"express": "^4.18.2",
+"express-session": "^1.17.3",
+"mongodb": "^6.2.0",
+"morgan": "~1.9.1",
+"passport": "^0.6.0",
+"passport-local": "^1.0.0"
+
+```
+
+## Dependencies: front-end
+
+```
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0"
+  },
+```
+
+## License
+
+This project is licensed under the MIT license.
