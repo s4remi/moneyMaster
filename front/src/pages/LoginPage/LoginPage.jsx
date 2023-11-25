@@ -108,10 +108,6 @@ export default function LoginPage() {
             }`}
           >
             <h1>Welcome Back!</h1>
-            <p>
-              Don't have an account, click on the "Sign Up" button.
-              <br /> Have an account already? Click on the "Sign In" button.
-            </p>
           </div>
           <div className="toggle-buttons">
             <button
@@ -120,6 +116,7 @@ export default function LoginPage() {
             >
               Sign In
             </button>
+
             <button
               className={isSignUpActive ? "active" : ""}
               onClick={() => setIsSignUpActive(true)}

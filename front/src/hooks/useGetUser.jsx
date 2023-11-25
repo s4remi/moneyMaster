@@ -1,10 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import { ErrorContext } from "../main";
 import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function useGetUser() {
   const [user, setUser] = useState(null);
   const { setError } = useContext(ErrorContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
