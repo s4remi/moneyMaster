@@ -93,7 +93,7 @@ export default function LoginPage() {
       </form>
     );
   };
-  // Toggle container component
+
   // Toggle container component
   const ToggleContainer = () => {
     return (
@@ -108,28 +108,20 @@ export default function LoginPage() {
             }`}
           >
             <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of the site features</p>
+            <p>
+              Don't have an account, click on the "Sign Up" button.
+              <br /> Have an account already? Click on the "Sign In" button.
+            </p>
+          </div>
+          <div className="toggle-buttons">
             <button
-              className="hidden"
-              id="login"
+              className={!isSignUpActive ? "active" : ""}
               onClick={() => setIsSignUpActive(false)}
             >
               Sign In
             </button>
-          </div>
-          <div
-            className={`toggle-panel toggle-right ${
-              isSignUpActive ? "active" : ""
-            }`}
-          >
-            <h1>Hello!</h1>
-            <p>
-              Register with your personal details to use all of the site
-              features
-            </p>
             <button
-              className="hidden"
-              id="register"
+              className={isSignUpActive ? "active" : ""}
               onClick={() => setIsSignUpActive(true)}
             >
               Sign Up
@@ -142,21 +134,19 @@ export default function LoginPage() {
 
   return (
     <BasePage>
+      <ToggleContainer />
       <div className="container" id="container" style={containerStyle}>
-        {isSignUpActive ? (
-          <div className="form-container sign-up">
-            <SignUpForm />
+        <div className="wrapper">
+          <div
+            className={`form-container ${
+              isSignUpActive ? "sign-up" : "sign-in"
+            }`}
+          >
+            {isSignUpActive ? null : <SignInForm />}
+            {isSignUpActive ? <SignUpForm /> : null}
           </div>
-        ) : (
-          <div className="form-container sign-in">
-            <SignInForm />
-          </div>
-        )}
+        </div>
       </div>
-      <ToggleContainer
-        isSignUpActive={isSignUpActive}
-        setIsSignUpActive={setIsSignUpActive}
-      />
     </BasePage>
   );
 }
@@ -239,4 +229,47 @@ export default function LoginPage() {
     </BasePage>
   );
 }
+*/
+
+/*
+<div
+        className="toggle-container"
+        style={{ left: isSignUpActive ? "50%" : "0" }}
+      >
+        <div className="toggle">
+          <div
+            className={`toggle-panel toggle-left ${
+              !isSignUpActive ? "active" : ""
+            }`}
+          >
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all of the site features</p>
+            <button
+              className="hidden"
+              id="login"
+              onClick={() => setIsSignUpActive(false)}
+            >
+              Sign In
+            </button>
+          </div>
+          <div
+            className={`toggle-panel toggle-right ${
+              isSignUpActive ? "active" : ""
+            }`}
+          >
+            <h1>Hello!</h1>
+            <p>
+              Register with your personal details to use all of the site
+              features
+            </p>
+            <button
+              className="hidden"
+              id="register"
+              onClick={() => setIsSignUpActive(true)}
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
 */
