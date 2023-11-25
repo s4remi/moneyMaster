@@ -7,10 +7,11 @@ export default function AboutPage() {
       <BasePage>
         <h1> Who we are?</h1>{" "}
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat at
-          quasi similique vero amet nemo et pariatur veritatis tempora
-          repellendus, nesciunt, perferendis aut alias soluta esse, nisi in
-          voluptas nostrum.
+          MC2 Tech isn't just an app development company; we are a collective of
+          visionaries and problem-solvers. Our commitment goes beyond writing
+          lines of code; it's about understanding your goals and translating
+          them into intuitive, user-centric applications. We're not just
+          developers; we're your technology partners in success.
         </div>
         <h2> Other Production</h2>{" "}
         <ul>
