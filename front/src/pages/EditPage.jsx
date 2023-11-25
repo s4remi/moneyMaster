@@ -1,6 +1,6 @@
-// EditPage.jsx
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditPage.css";
 
 export function EditPage() {
   const navigate = useNavigate();
