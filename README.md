@@ -16,8 +16,7 @@ Createed by Ali Saremi
 
 ## Demo
 
-Walkthrough Video
-Website Link:
+[![Demo](https://img.youtube.com/vi/LpvGg0Jy8AY/0.jpg)](https://www.youtube.com/watch?v=LpvGg0Jy8AY)
 
 ## Installation
 
