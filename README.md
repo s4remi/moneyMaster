@@ -6,9 +6,13 @@ Createed by Ali Saremi
 
 ### Design Document:
 
+![main page](./data/Main.png)
+![login / register](./data/LoginPage.png)
+![edit page](./data/Editpage.png) ![data page](./data/Dataspage.png)
+
 #### slides:
 
-[slides]: (https://docs.google.com/presentation/d/1EPZiVV4H_JwtapBzgIOujojJo_Lgmi68OzKlkjXnTdI/edit?usp=sharing)
+[Slides presentation](https://docs.google.com/presentation/d/1EPZiVV4H_JwtapBzgIOujojJo_Lgmi68OzKlkjXnTdI/edit?usp=sharing)
 
 ## Demo
 
@@ -64,6 +68,8 @@ npm start
     "react-router-dom": "^6.19.0"
   },
 ```
+
+//add html link
 
 ### brief overview of the components:
 
