@@ -4,7 +4,7 @@ import myDB from "../db/myMongoDB.js";
 let router = express.Router();
 
 router.post("/api/bankAccs", async (req, res) => {
-  const postResult = await myDB.createBankAccount(req.body);
+  const postResult = await myDB.createBankAccount(req.body, req);
   if (postResult) {
     res.send(postResult);
   }
@@ -39,13 +39,3 @@ router.delete("/api/bankAccs/:id", async (req, res) => {
   }
 });
 export default router;
-
-/*
-get all of the users projects
-router.get("/:id", async (req, res) => {
-  const bankArray = await myDB.getUserBankAccounts(req.params.id);
-  if (bankArray) {
-    res.send(bankArray);
-  }
-});
-*/

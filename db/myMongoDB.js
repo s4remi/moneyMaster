@@ -43,6 +43,17 @@ function MyMongoDB() {
       await client.close();
     }
   };
+  myDB.logUserActivity = async function (activity) {
+    const { client, db } = connect();
+
+    try {
+      activity.timestamp = new Date().toISOString();
+      await db.collection("activity").insertOne(activity);
+    } finally {
+      await client.close();
+    }
+  };
+
   myDB.getUserByUsername = async function (username) {
     const { client, db } = connect();
 
@@ -70,11 +81,27 @@ function MyMongoDB() {
       client.close();
     }
   */
-  myDB.createBankAccount = async (bankObject) => {
+  myDB.createBankAccount = async (bankObject, req) => {
     const { client, db } = connect();
     try {
       console.log("Creating project...");
       const result = await db.collection("datas").insertOne(bankObject);
+      // console.log("created bank account");
+      const usernameCreate = await myDB.getUserByUsername(req.user.username);
+      // Log the creation activity
+      const activityLog = {
+        username: usernameCreate
+          ? usernameCreate.username
+          : bankObject.account_name,
+        action: "create",
+        objectType: "bank_account",
+        objectId: result.insertedId.toString(),
+        timestamp: new Date().toISOString(),
+        changes: {
+          /* Include any additional information about the creation */
+        },
+      };
+      await myDB.logUserActivity(activityLog);
       console.log("created bank account");
       return result;
     } finally {
@@ -122,72 +149,3 @@ function MyMongoDB() {
 }
 const myDB = MyMongoDB();
 export default myDB;
-
-// myDB.getUserBankAccounts = async function (userId) {
-//   let client;
-//   try {
-//     console.log("Getting bank accounts...");
-//     client = new MongoClient(connection_url, { useUnifiedTopology: true });
-//     await client.connect();
-//     console.log("Connecting to DB...");
-//     const db = client.db("monyMaster");
-//     const datasCollection = db.collection("datas");
-//     const results = await datasCollection.find({ ownerId: userId }).toArray();
-//     console.log("got user's bank accounts");
-//     return results;
-//   } finally {
-//     client.close();
-//   }
-// };
-
-/*
-
-  // myDB.getUser = async (query = {}) => {
-  //   const { client, db } = connect();
-  //   const userCollection = db.collection("users");
-  //   try {
-  //     return userCollection.findOne(query);
-  //   } catch (e) {
-  //     await client.close();
-  //   }
-  // };
-  // myDB.createUser = async (doc = {}) => {
-  //   const { client, db } = connect();
-  //   const userCollection = db.collection("users");
-  //   try {
-  //     return userCollection.insertOne(doc);
-  //   } catch (e) {
-  //     await client.close();
-  //   }
-  // };
-  */
-
-/*
- myDB.getBankAccountById = async function (id) {
-    const { client, db } = connect();
-    try {
-      const bankObject = await db
-        .collection("datas")
-        .findOne({ _id: new ObjectId(id) });
-      return bankObject;
-    } finally {
-      await client.close();
-    }
-  };
-
-*/
-
-/*
-account_number:881551618-2
-balance: 783149.26
-currency: SEK
-opening_date: 4/30/2016
-last_transaction_date: 10/26/2021
-interest_rate: 9.84
-account_type: Savings
-credit_limit: 17415.17
-is_active: false
-expenses: 394388.67
-earnings: 828826.35
-
-*/

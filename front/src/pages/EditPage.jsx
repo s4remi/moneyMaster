@@ -147,17 +147,7 @@ export function EditPage() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="currency">Currency:</label>
-          <input
-            type="text"
-            id="currency"
-            name="currency"
-            value={formData.currency}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+
         <div>
           <label htmlFor="account_type">account_type:</label>
           <input

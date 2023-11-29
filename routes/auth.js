@@ -5,13 +5,45 @@ import myDB from "../db/myMongoDB.js";
 
 const router = express.Router();
 
-router.post(
-  "/api/login/password",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-  })
-);
+{
+  /* <div>
+//before adding activity log
+  router.post(
+    "/api/login/password",
+    passport.authenticate("local", {
+      successRedirect: "/",
+      failureRedirect: "/login",
+    })
+  );
+</div> */
+}
+router.post("/api/login/password", async function (req, res, next) {
+  passport.authenticate("local", async function (err, user, info) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.redirect("/login"); // Adjust the redirect path as needed
+    }
+
+    req.logIn(user, async function (err) {
+      if (err) {
+        return next(err);
+      }
+
+      // Log the login activity
+      const activityLog = {
+        username: user.username,
+        action: "login",
+        timestamp: new Date().toISOString(),
+      };
+
+      await myDB.logUserActivity(activityLog);
+
+      return res.redirect("/"); // Adjust the redirect path as needed
+    });
+  })(req, res, next);
+});
 
 router.post("/api/logout", function (req, res, next) {
   req.logout(function (err) {
