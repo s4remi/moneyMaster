@@ -108,7 +108,7 @@ function MyMongoDB() {
       await client.close();
     }
   };
-
+  /*
   myDB.deleteBankAccount = async (bankId) => {
     let client;
     try {
@@ -122,6 +122,37 @@ function MyMongoDB() {
         _id: new ObjectId(bankId),
       });
       console.log("deleted bank account", result);
+    } finally {
+      client.close();
+    }
+  };
+  */
+  // Modify myMongoDB.js
+  myDB.deleteBankAccount = async (bankId, username, req) => {
+    const { client, db } = connect();
+    try {
+      console.log("Deleting bank account");
+      const result = await db.collection("datas").findOneAndDelete({
+        _id: new ObjectId(bankId),
+      });
+
+      // Log the delete activity
+      const activityLog = {
+        username: username,
+        action: "delete",
+        objectType: "bank_account",
+        objectId: bankId,
+        timestamp: new Date().toISOString(),
+      };
+      if (req) {
+        activityLog.clientIP = req.ip;
+        activityLog.userAgent = req.get("User-Agent");
+      }
+
+      await myDB.logUserActivity(activityLog);
+
+      console.log("deleted bank account", result);
+      return result;
     } finally {
       client.close();
     }

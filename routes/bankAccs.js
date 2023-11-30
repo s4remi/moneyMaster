@@ -30,7 +30,8 @@ router.put("/api/bankAccs/:id", async (req, res) => {
 router.delete("/api/bankAccs/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await myDB.deleteBankAccount(id);
+    const usernameDelete = req.user?.username || null;
+    const result = await myDB.deleteBankAccount(id, usernameDelete, req);
     console.log(`Deleted bank account with ID ${id}:`, result);
     res.json(result);
   } catch (error) {
@@ -38,4 +39,5 @@ router.delete("/api/bankAccs/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 export default router;
