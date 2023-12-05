@@ -1,0 +1,448 @@
+[{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762132"
+  },
+  "account_number": "124342316-1",
+  "balance": "796704.57",
+  "currency": "IDR",
+  "opening_date": "9/9/2013",
+  "last_transaction_date": "3/12/2021",
+  "interest_rate": "7.12",
+  "account_type": "Savings",
+  "credit_limit": "82655.38",
+  "is_active": "false",
+  "expenses": "891216.28",
+  "earnings": "240634.15"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762133"
+  },
+  "account_number": "214375407-8",
+  "balance": "881958.9",
+  "currency": "UAH",
+  "opening_date": "2/1/2013",
+  "last_transaction_date": "11/23/2020",
+  "interest_rate": "1.87",
+  "account_type": "Savings",
+  "credit_limit": "81371.73",
+  "is_active": "false",
+  "expenses": "724093.76",
+  "earnings": "811448.4"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762137"
+  },
+  "account_number": "452793170-9",
+  "balance": "137785.87",
+  "currency": "PEN",
+  "opening_date": "3/24/2021",
+  "last_transaction_date": "10/8/2021",
+  "interest_rate": "9.61",
+  "account_type": "Checking",
+  "credit_limit": "10821.17",
+  "is_active": "false",
+  "expenses": "614237.4",
+  "earnings": "286463.69"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762139"
+  },
+  "account_number": "781260880-8",
+  "balance": "216384.54",
+  "currency": "MGA",
+  "opening_date": "9/24/2015",
+  "last_transaction_date": "4/7/2020",
+  "interest_rate": "7.32",
+  "account_type": "Checking",
+  "credit_limit": "97644.51",
+  "is_active": "false",
+  "expenses": "983745.18",
+  "earnings": "818828.24"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213a"
+  },
+  "account_number": "436323767-8",
+  "balance": "939854.81",
+  "currency": "MXN",
+  "opening_date": "3/14/2010",
+  "last_transaction_date": "3/11/2021",
+  "interest_rate": "3.11",
+  "account_type": "Savings",
+  "credit_limit": "38668.09",
+  "is_active": "false",
+  "expenses": "455930.76",
+  "earnings": "716332.17"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213b"
+  },
+  "account_number": "016585142-2",
+  "balance": "464097.67",
+  "currency": "CNY",
+  "opening_date": "9/4/2019",
+  "last_transaction_date": "3/22/2020",
+  "interest_rate": "3.72",
+  "account_type": "Investment",
+  "credit_limit": "34865.84",
+  "is_active": "true",
+  "expenses": "563102.4",
+  "earnings": "186976.64"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213c"
+  },
+  "account_number": "204316617-4",
+  "balance": "108602.49",
+  "currency": "RSD",
+  "opening_date": "10/31/2012",
+  "last_transaction_date": "1/26/2021",
+  "interest_rate": "5.99",
+  "account_type": "Investment",
+  "credit_limit": "55182.11",
+  "is_active": "false",
+  "expenses": "730043.62",
+  "earnings": "770801.82"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213d"
+  },
+  "account_number": "755358917-9",
+  "balance": "557386.52",
+  "currency": "CNY",
+  "opening_date": "8/9/2012",
+  "last_transaction_date": "10/26/2020",
+  "interest_rate": "2.45",
+  "account_type": "Savings",
+  "credit_limit": "27809.75",
+  "is_active": "true",
+  "expenses": "318313.73",
+  "earnings": "885790.18"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213e"
+  },
+  "account_number": "191330367-5",
+  "balance": "671859.66",
+  "currency": "ARS",
+  "opening_date": "8/18/2012",
+  "last_transaction_date": "6/9/2021",
+  "interest_rate": "9.06",
+  "account_type": "Investment",
+  "credit_limit": "89277.03",
+  "is_active": "true",
+  "expenses": "292612.22",
+  "earnings": "632830.82"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc3776213f"
+  },
+  "account_number": "760654261-9",
+  "balance": "43620.4",
+  "currency": "ARS",
+  "opening_date": "10/21/2017",
+  "last_transaction_date": "4/2/2020",
+  "interest_rate": "9.73",
+  "account_type": "Checking",
+  "credit_limit": "21694.54",
+  "is_active": "false",
+  "expenses": "541852.08",
+  "earnings": "432228.32"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762140"
+  },
+  "account_number": "294431142-5",
+  "balance": "697277.9",
+  "currency": "RUB",
+  "opening_date": "7/14/2010",
+  "last_transaction_date": "12/26/2021",
+  "interest_rate": "5.91",
+  "account_type": "Investment",
+  "credit_limit": "60687.28",
+  "is_active": "true",
+  "expenses": "414830.67",
+  "earnings": "289641.81"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762141"
+  },
+  "account_number": "248518902-1",
+  "balance": "166512.11",
+  "currency": "EUR",
+  "opening_date": "2/7/2017",
+  "last_transaction_date": "10/12/2021",
+  "interest_rate": "5.0",
+  "account_type": "Savings",
+  "credit_limit": "25819.44",
+  "is_active": "true",
+  "expenses": "737077.35",
+  "earnings": "435854.51"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762142"
+  },
+  "account_number": "761739198-6",
+  "balance": "586611.1",
+  "currency": "KRW",
+  "opening_date": "6/18/2010",
+  "last_transaction_date": "6/6/2020",
+  "interest_rate": "7.39",
+  "account_type": "Investment",
+  "credit_limit": "47023.41",
+  "is_active": "false",
+  "expenses": "215917.79",
+  "earnings": "963105.33"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762143"
+  },
+  "account_number": "702465000-1",
+  "balance": "254196.85",
+  "currency": "PHP",
+  "opening_date": "4/19/2010",
+  "last_transaction_date": "10/18/2020",
+  "interest_rate": "9.59",
+  "account_type": "Savings",
+  "credit_limit": "64675.44",
+  "is_active": "false",
+  "expenses": "709119.52",
+  "earnings": "418131.68"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762144"
+  },
+  "account_number": "606199535-0",
+  "balance": "962997.08",
+  "currency": "CNY",
+  "opening_date": "9/26/2021",
+  "last_transaction_date": "7/2/2020",
+  "interest_rate": "0.83",
+  "account_type": "Savings",
+  "credit_limit": "66719.07",
+  "is_active": "false",
+  "expenses": "150928.2",
+  "earnings": "960089.06"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762145"
+  },
+  "account_number": "078303232-3",
+  "balance": "764325.2",
+  "currency": "EUR",
+  "opening_date": "8/24/2019",
+  "last_transaction_date": "4/3/2021",
+  "interest_rate": "5.88",
+  "account_type": "Investment",
+  "credit_limit": "55208.86",
+  "is_active": "false",
+  "expenses": "786520.59",
+  "earnings": "416466.56"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762146"
+  },
+  "account_number": "741822101-0",
+  "balance": "550079.79",
+  "currency": "PLN",
+  "opening_date": "6/11/2020",
+  "last_transaction_date": "4/26/2021",
+  "interest_rate": "2.83",
+  "account_type": "Savings",
+  "credit_limit": "59121.96",
+  "is_active": "true",
+  "expenses": "44976.77",
+  "earnings": "797914.9"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762147"
+  },
+  "account_number": "930668826-1",
+  "balance": "963767.42",
+  "currency": "RUB",
+  "opening_date": "7/14/2015",
+  "last_transaction_date": "2/16/2020",
+  "interest_rate": "6.73",
+  "account_type": "Savings",
+  "credit_limit": "20351.71",
+  "is_active": "false",
+  "expenses": "973052.99",
+  "earnings": "144446.85"
+},
+{
+  "_id": {
+    "$oid": "65590aec7b91edbc37762148"
+  },
+  "account_number": "266590939-1",
+  "balance": "139173.87",
+  "currency": "IDR",
+  "opening_date": "3/17/2019",
+  "last_transaction_date": "2/24/2020",
+  "interest_rate": "9.44",
+  "account_type": "Savings",
+  "credit_limit": "31628.09",
+  "is_active": "true",
+  "expenses": "79703.51",
+  "earnings": "985030.65"
+},
+{
+  "_id": {
+    "$oid": "655a699e6e2dbf53ca984563"
+  },
+  "account_number": "532828683-9",
+  "balance": "715385",
+  "currency": "CNY",
+  "opening_date": "10/1/2020",
+  "last_transaction_date": "4/28/2020",
+  "interest_rate": "8.75",
+  "account_type": "Checking",
+  "credit_limit": "34662",
+  "is_active": "false",
+  "expenses": "151955",
+  "earnings": "133630"
+},
+{
+  "_id": {
+    "$oid": "655c4f26521395f3356fd91f"
+  },
+  "account_number": "881551618-2",
+  "balance": "783149",
+  "currency": "SEK",
+  "opening_date": "4/30/2016",
+  "last_transaction_date": "10/26/2021",
+  "interest_rate": "9.84",
+  "account_type": "savings",
+  "credit_limit": "17415",
+  "is_active": "false",
+  "expenses": "394388",
+  "earnings": "828826"
+},
+{
+  "_id": {
+    "$oid": "6562ab9a9313ab8cb990ec26"
+  },
+  "account_number": "12500",
+  "balance": "12500",
+  "currency": "US",
+  "opening_date": "1/1/2023",
+  "last_transaction_date": "5/6/2023",
+  "interest_rate": "7",
+  "account_type": "checking",
+  "credit_limit": "100",
+  "is_active": "false",
+  "expenses": "10",
+  "earnings": "11"
+},
+{
+  "_id": {
+    "$oid": "6567af255cb1aed5f0704208"
+  },
+  "account_number": "1111",
+  "balance": "2222",
+  "currency": "3333",
+  "opening_date": "4444",
+  "last_transaction_date": "5555",
+  "interest_rate": "6666",
+  "account_type": "7777",
+  "credit_limit": "8888",
+  "is_active": "9999",
+  "expenses": "1010",
+  "earnings": "2020"
+},
+{
+  "_id": {
+    "$oid": "65681b4238fd5a81f4586a82"
+  },
+  "account_number": "mmmmm",
+  "balance": "11",
+  "currency": "1",
+  "opening_date": "1",
+  "last_transaction_date": "1",
+  "interest_rate": "1",
+  "account_type": "1",
+  "credit_limit": "1",
+  "is_active": "1",
+  "expenses": "1",
+  "earnings": "2215"
+},
+{
+  "_id": {
+    "$oid": "65681b8438fd5a81f4586a85"
+  },
+  "account_number": "103",
+  "balance": "103",
+  "currency": "103",
+  "opening_date": "103",
+  "last_transaction_date": "103",
+  "interest_rate": "103",
+  "account_type": "103",
+  "credit_limit": "103",
+  "is_active": "103",
+  "expenses": "103",
+  "earnings": "103"
+},
+{
+  "_id": {
+    "$oid": "656e49dd3b9f0812e9bbc6f1"
+  },
+  "account_number": "herenew",
+  "balance": "here",
+  "currency": "here",
+  "opening_date": "here",
+  "last_transaction_date": "here",
+  "interest_rate": "here",
+  "account_type": "here",
+  "credit_limit": "here",
+  "is_active": "here",
+  "expenses": "here",
+  "earnings": "here"
+},
+{
+  "_id": {
+    "$oid": "656e4bf6c18eb1a2fbafcc11"
+  },
+  "account_number": "987654321",
+  "balance": "120050",
+  "currency": "USD",
+  "opening_date": "5/15/2018",
+  "last_transaction_date": "11/28/2023",
+  "interest_rate": "3.74",
+  "account_type": "Checking",
+  "credit_limit": "5000",
+  "is_active": "true",
+  "expenses": "35000",
+  "earnings": "9766"
+},
+{
+  "_id": {
+    "$oid": "656e50f80add326749c223c6"
+  },
+  "account_number": "testfor now",
+  "balance": "testfor now",
+  "currency": "v",
+  "opening_date": "testfor now",
+  "last_transaction_date": "v",
+  "interest_rate": "testfor now",
+  "account_type": "testfor now",
+  "credit_limit": "testfor now",
+  "is_active": "testfor now",
+  "expenses": "testfor now",
+  "earnings": "vtestfor now"
+}]

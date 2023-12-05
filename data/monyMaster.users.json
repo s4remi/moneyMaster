@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "65584bffa9e25bfe2d3c9bed"
+  },
+  "username": "ali",
+  "hashedPassword": "20e0df97567300234807e71997b5e6d792f22fb4d8f7e62a77de4240e1eea1b3",
+  "salt": "12ae49cd035e7386c308cbec6d8217c6"
+},
+{
+  "_id": {
+    "$oid": "655c5003521395f3356fd920"
+  },
+  "username": "",
+  "hashedPassword": "45ca59b9a492f5ab7a662c236cf7cad7d960c0d6778e5af7a562e641549ac06b",
+  "salt": "3123cbb0f6fc7a3065a00e9da32bfcb1"
+},
+{
+  "_id": {
+    "$oid": "6562a6699313ab8cb990ec22"
+  },
+  "username": "new",
+  "hashedPassword": "649e03bf0dcc96b3f13d8b094d154a620c1d217de3b80cecf75c6087cf93f04f",
+  "salt": "28c347704dca29e059da72d5b97e372c"
+},
+{
+  "_id": {
+    "$oid": "6562a9919313ab8cb990ec23"
+  },
+  "username": "test",
+  "hashedPassword": "ffa1a44bc958baec0030a1f89efb8a730b2418d14b9a253f1638e22c5fcab265",
+  "salt": "547d1a0fa015d0c9a18c5f339bf30c5d"
+},
+{
+  "_id": {
+    "$oid": "6562ab129313ab8cb990ec25"
+  },
+  "username": "test2",
+  "hashedPassword": "82318d9ab8bf2eb33ebaaf774b331f44b56e5c9e8a6d18147017740a53efc606",
+  "salt": "35b01a8c2a432d15285fd8d82c332e0c"
+}]
