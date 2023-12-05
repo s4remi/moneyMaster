@@ -47,8 +47,18 @@ function MyMongoDB() {
     const { client, db } = connect();
 
     try {
-      activity.timestamp = new Date().toISOString();
-      await db.collection("activity").insertOne(activity);
+      //activity.timestamp = new Date().toISOString();
+      const userActivity = {
+        username: activity.username,
+        action: activity.action,
+        objectType: activity.objectType,
+        objectId: activity.objectId,
+        timestamp: new Date().toISOString(),
+        changes: activity.changes || null,
+        clientIP: activity.clientIP || null,
+        userAgent: activity.userAgent || null,
+      };
+      await db.collection("activity").insertOne(userActivity);
     } finally {
       await client.close();
     }
@@ -65,22 +75,6 @@ function MyMongoDB() {
     }
   };
 
-  /*
-  let client;
-    try {
-      console.log("Creating project...");
-      client = new MongoClient(connection_url, { useUnifiedTopology: true });
-      await client.connect();
-      console.log("Connecting to monyMaster DB...");
-      const db = client.db("monyMaster");
-      const banksCollection = db.collection("datas");
-      const result = await banksCollection.insertOne(bankObject);
-      console.log("created bank account");
-      return result;
-    } finally {
-      client.close();
-    }
-  */
   myDB.createBankAccount = async (bankObject, req) => {
     const { client, db } = connect();
     try {
@@ -108,30 +102,11 @@ function MyMongoDB() {
       await client.close();
     }
   };
-  /*
-  myDB.deleteBankAccount = async (bankId) => {
-    let client;
-    try {
-      console.log("Deleting bank account");
-      client = new MongoClient(connection_url, { useUnifiedTopology: true });
-      await client.connect();
-      console.log("connecting to the db");
-      const db = client.db("monyMaster");
-      const datasCollection = db.collection("datas");
-      const result = await datasCollection.findOneAndDelete({
-        _id: new ObjectId(bankId),
-      });
-      console.log("deleted bank account", result);
-    } finally {
-      client.close();
-    }
-  };
-  */
-  // Modify myMongoDB.js
+
   myDB.deleteBankAccount = async (bankId, username, req) => {
     const { client, db } = connect();
     try {
-      console.log("Deleting bank account");
+      console.log("Deleting bank account with ID:", bankId);
       const result = await db.collection("datas").findOneAndDelete({
         _id: new ObjectId(bankId),
       });
@@ -158,19 +133,77 @@ function MyMongoDB() {
     }
   };
 
-  myDB.updateBankAccount = async (bankId, updatedData) => {
+  myDB.getBankAccountById = async function (id) {
     const { client, db } = connect();
     try {
-      console.log("Updating bank account with ID:", bankId);
       const result = await db
         .collection("datas")
-        .findOneAndUpdate(
-          { _id: new ObjectId(bankId) },
-          { $set: updatedData },
-          { returnDocument: "after" }
+        .findOne({ _id: new ObjectId(id) });
+      return result;
+    } finally {
+      await client.close();
+    }
+  };
+
+  myDB.updateBankAccount = async (bankId, updatedData, username, req) => {
+    const { client, db } = connect();
+    try {
+      console.log("in myDB.updateBankAccount with ID:", bankId);
+      console.log("Before update operation. Checking if document exists:", {
+        _id: new ObjectId(bankId),
+      });
+
+      const existingBankAccount = await db
+        .collection("datas")
+        .findOne({ _id: new ObjectId(bankId) });
+
+      if (!existingBankAccount) {
+        console.log("Bank account not found for update.");
+        return null;
+      }
+
+      if (username !== null && username !== undefined) {
+        delete updatedData._id;
+        const result = await db
+          .collection("datas")
+          .findOneAndUpdate(
+            { _id: new ObjectId(bankId) },
+            { $set: { ...updatedData } },
+            { returnDocument: "after" }
+          );
+        console.log("After update operation. Result:", result);
+
+        if (result.ok) {
+          const updatedBankAccount = result.value;
+
+          console.log("Update successful:", updatedBankAccount);
+          const activityLog = {
+            username: username,
+            action: "update",
+            objectType: "bank_account",
+            objectId: bankId,
+            timestamp: new Date().toISOString(),
+            changes: updatedData,
+          };
+
+          if (req) {
+            activityLog.clientIP = req.ip;
+            activityLog.userAgent = req.get("User-Agent");
+          }
+
+          await myDB.logUserActivity(activityLog);
+          console.log("Updated bank account:", updatedBankAccount);
+          return updatedBankAccount;
+        } else {
+          console.log("Update failed. Result:", result);
+          return null;
+        }
+      } else {
+        console.log(
+          "Username is not available. Skipping update and activity log."
         );
-      console.log("Updated bank account:", result.value);
-      return result.value;
+        return null;
+      }
     } finally {
       await client.close();
     }

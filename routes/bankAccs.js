@@ -15,13 +15,45 @@ router.put("/api/bankAccs/:id", async (req, res) => {
   const { id } = req.params;
   const updatedData = req.body;
   console.log(`Received update request for bank account with ID ${id}`);
+  console.log("in router.put. Updated data:", updatedData);
 
   try {
-    const result = await myDB.updateBankAccount(id, updatedData);
-    console.log(`Updated bank account with ID ${id}:`, result);
+    const usernameUpdate = req.user?.username;
+    console.log(
+      "in try&catch, router.put. Username for update:",
+      usernameUpdate
+    );
+
+    if (!usernameUpdate) {
+      console.error("in the router. User is not authenticated");
+      res
+        .status(401)
+        .json({ error: "in the router., User is not authenticated" });
+      return;
+    }
+
+    const result = await myDB.updateBankAccount(
+      id,
+      updatedData,
+      usernameUpdate,
+      req
+    );
+
+    if (!result) {
+      console.error("In Router,Bank account not found for update.");
+      res
+        .status(404)
+        .json({ error: "In Router, Bank account not found for update" });
+      return;
+    }
+
+    console.log(`IN ROUTER, Updated bank account with ID ${id}:`, result);
     res.json(result);
   } catch (error) {
-    console.error(`Error updating bank account with ID ${id}:`, error);
+    console.error(
+      `IN ROUTER Error updating bank account with ID ${id}:`,
+      error
+    );
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
@@ -39,5 +71,21 @@ router.delete("/api/bankAccs/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+router.get("/api/bankAccs/:id", async (req, res) => {
+  const { id } = req.params;
 
+  try {
+    const result = await myDB.getBankAccountById(id);
+
+    if (result) {
+      res.json(result);
+    } else {
+      console.error(`Bank account with ID ${id} not found.`);
+      res.status(404).json({ error: "Bank account not found" });
+    }
+  } catch (error) {
+    console.error(`Error fetching bank account with ID ${id}:`, error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 export default router;

@@ -5,18 +5,6 @@ import myDB from "../db/myMongoDB.js";
 
 const router = express.Router();
 
-{
-  /* <div>
-//before adding activity log
-  router.post(
-    "/api/login/password",
-    passport.authenticate("local", {
-      successRedirect: "/",
-      failureRedirect: "/login",
-    })
-  );
-</div> */
-}
 router.post("/api/login/password", async function (req, res, next) {
   passport.authenticate("local", async function (err, user, info) {
     if (err) {
@@ -93,3 +81,19 @@ router.post("/api/signup", async function (req, res, next) {
 });
 
 export default router;
+
+/*
+
+{
+  /* <div>
+//before adding activity log
+  router.post(
+    "/api/login/password",
+    passport.authenticate("local", {
+      successRedirect: "/",
+      failureRedirect: "/login",
+    })
+  );
+</div> 
+}
+*/

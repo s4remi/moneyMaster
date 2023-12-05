@@ -18,24 +18,35 @@ export function EditPage() {
     expenses: "",
     earnings: "",
   });
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log("ID in useEffect:", id);
     // Fetch the bank object with the provided ID
     const fetchBankObject = async () => {
       try {
-        const response = await fetch(`/api/bankAccs/${id}`);
+        console.log("in useEffect for finding what ID is ", id);
+        const response = await fetch(`/api/bankAccs/${id.toString()}`);
         if (response.ok) {
           const bankObject = await response.json();
           // Set the form data with the fetched bank object
           setFormData({ ...bankObject });
         } else {
           console.error(`Error fetching bank object with ID ${id}.`);
+          setError({
+            msg: `Error fetching bank object with ID ${id}.`,
+            type: "danger",
+          });
         }
       } catch (error) {
         console.error(
           "An error occurred while fetching bank object data",
           error
         );
+        setError({
+          msg: "An error occurred while fetching bank object data",
+          type: "danger",
+        });
       }
     };
 
@@ -50,7 +61,7 @@ export function EditPage() {
   const handleSave = async () => {
     console.log("Save button clicked");
 
-    // Example: Update the bank object on the server
+    // Update the bank object on the server
     try {
       const response = await fetch(`/api/bankAccs/${id}`, {
         method: "PUT",
@@ -62,12 +73,20 @@ export function EditPage() {
 
       if (response.ok) {
         console.log(`Bank object with ID ${id} updated successfully.`);
-        navigate("/");
+        navigate("/datas?query=${query}");
       } else {
         console.error(`Error updating bank object with ID ${id}.`);
+        setError({
+          msg: `Error updating bank object with ID ${id}.`,
+          type: "danger",
+        });
       }
     } catch (error) {
       console.error("An error occurred while updating bank object data", error);
+      setError({
+        msg: `Error updating bank object with ID ${id}.`,
+        type: "danger",
+      });
     }
   };
 
@@ -79,7 +98,7 @@ export function EditPage() {
   return (
     <div>
       <h2>Edit Bank Account</h2>
-
+      {error && <div className={`alert alert-${error.type}`}>{error.msg}</div>}
       <form>
         <div>
           <label htmlFor="account_number">Account Number:</label>
@@ -147,7 +166,6 @@ export function EditPage() {
             required
           />
         </div>
-
         <div>
           <label htmlFor="account_type">account_type:</label>
           <input
