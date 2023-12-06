@@ -165,17 +165,17 @@ function MyMongoDB() {
 
       if (username !== null && username !== undefined) {
         delete updatedData._id;
-        const result = await db
-          .collection("datas")
-          .findOneAndUpdate(
-            { _id: new ObjectId(bankId) },
-            { $set: { ...updatedData } },
-            { returnDocument: "after" }
-          );
-        console.log("After update operation. Result:", result);
+        const result = await db.collection("datas").findOneAndUpdate(
+          { _id: new ObjectId(bankId) },
+          { $set: { ...updatedData } },
 
-        if (result.ok) {
-          const updatedBankAccount = result.value;
+          { returnOriginal: false }
+        );
+        console.log("After update operation. Result:", result);
+        //console.log("this is the result.value\t", result.value);
+
+        if (result) {
+          const updatedBankAccount = result;
 
           console.log("Update successful:", updatedBankAccount);
           const activityLog = {

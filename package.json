@@ -6,7 +6,11 @@
   "author": "Ali Saremi",
   "license": "MIT",
   "scripts": {
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js"
+    "start": "node ./bin/www.js",
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "product": "cd front; yarn build; node ./bin/www.js",
+    "postinstall": "cd front && yarn && yarn build",
+    "importdata": "mongoimport -d monyMaster -c users --file ./data/monyMaster.users.json --drop --jsonArray && mongoimport -d monyMaster -c datas --file ./data/monyMaster.datas.json --drop --jsonArray && mongoimport -d monyMaster -c activity --file ./data/monyMaster.activity.json --drop --jsonArray"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

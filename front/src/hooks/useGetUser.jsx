@@ -25,7 +25,7 @@ export function useGetUser() {
     fetchUser();
   }, [setError]);
 
-  async function onLogout(redirectTo = "/login") {
+  async function onLogout() {
     const response = await fetch("/api/logout", {
       method: "POST",
     });
@@ -36,7 +36,7 @@ export function useGetUser() {
 
     setUser(null);
     console.log("Logging out redirecting", user);
-    redirect(redirectTo);
+    window.location.reload();
   }
 
   return { user, onLogout };

@@ -73,7 +73,7 @@ export function EditPage() {
 
       if (response.ok) {
         console.log(`Bank object with ID ${id} updated successfully.`);
-        navigate("/datas?query=${query}");
+        navigate("/");
       } else {
         console.error(`Error updating bank object with ID ${id}.`);
         setError({
