@@ -5,7 +5,8 @@ dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
-  const connection_url = process.env.MONGO_URI;
+  //const connection_url = process.env.MONGO_URI;
+  const connection_url = process.env.MONGO_URIA;
 
   const connect = () => {
     const client = new MongoClient(connection_url);
