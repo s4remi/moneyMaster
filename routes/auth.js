@@ -6,7 +6,7 @@ import myDB from "../db/myMongoDB.js";
 const router = express.Router();
 
 router.post("/api/login/password", async function (req, res, next) {
-  passport.authenticate("local", async function (err, user, info) {
+  passport.authenticate("local", async function (err, user) {
     if (err) {
       return next(err);
     }
