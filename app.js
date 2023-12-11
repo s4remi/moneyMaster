@@ -108,5 +108,8 @@ app.use(passport.authenticate("session"));
 app.use("/", indexRouter);
 app.use("/", authRouter);
 app.use("/", projectsRouter);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/front/dist/index.html"));
+});
 
 export default app;
