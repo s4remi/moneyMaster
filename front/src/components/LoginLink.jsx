@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { useGetUser } from "../hooks/useGetUser";
+import "./LoginLink.css";
 
 export function LoginLink() {
   const { user, onLogout } = useGetUser();
@@ -9,7 +10,7 @@ export function LoginLink() {
     <>
       {user ? (
         <div>
-          Welcome: {user}{" "}
+          <p>Welcome: {user} </p>
           <button className="nav-link" onClick={onLogout}>
             Logout
           </button>
