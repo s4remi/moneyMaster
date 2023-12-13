@@ -18,11 +18,11 @@ I have decided that I need to express a delightful and modern feeling for my Mon
 
 ### Usability Study Report
 
-[MoneyMaster Usability Study Report by Ali Saremi](https://docs.google.com/document/d/1AIqcdRl-wnfN80I4XupIXk56O9NsTg4uHPIJM_oSDyA/edit?usp=sharing)
-[user case study 1](https://www.youtube.com/watch?v=J5P4DcqlsTc)
-[user case study 2](https://www.youtube.com/watch?v=X4G9sA-SX0o)
-[user case study 3-1,concent form](https://www.youtube.com/watch?v=BVu2nmdqYUo)
-[user case study 3-2 app intraction](https://www.youtube.com/watch?v=jaM5Ml-Fea0)
+[MoneyMaster Usability Study Report by Ali Saremi](https://docs.google.com/document/d/1AIqcdRl-wnfN80I4XupIXk56O9NsTg4uHPIJM_oSDyA/edit?usp=sharing)<br>
+[user case study 1](https://www.youtube.com/watch?v=J5P4DcqlsTc)<br>
+[user case study 2](https://www.youtube.com/watch?v=X4G9sA-SX0o)<br>
+[user case study 3-1,concent form](https://www.youtube.com/watch?v=BVu2nmdqYUo)<br>
+[user case study 3-2 app intraction](https://www.youtube.com/watch?v=jaM5Ml-Fea0)<br>
 
 ### Slides & Video & Design Document & Deployment Link
 
