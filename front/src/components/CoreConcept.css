@@ -1,0 +1,27 @@
+.core-concept-item {
+  background-color: #e6199e;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.core-concept-item img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.core-concept-item h3 {
+  color: #3d2645;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0; /* Remove default margin */
+  margin-bottom: 0.5rem; /* Add some spacing between h3 and p */
+}
+
+.core-concept-item p {
+  color: #3d2645;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0; /* Remove default margin */
+}

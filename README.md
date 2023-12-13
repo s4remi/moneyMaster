@@ -26,6 +26,8 @@ I have decided that I need to express a delightful and modern feeling for my Mon
 
 [Slides Here V1.0](https://docs.google.com/presentation/d/1EPZiVV4H_JwtapBzgIOujojJo_Lgmi68OzKlkjXnTdI/edit?usp=sharing)
 
+[Design Document](https://docs.google.com/document/d/1NktV_wv2bf1F0-Ayk9nscXADAFFRC8qYrTxc2s-lNAY/edit?usp=sharing)
+
 ## Demo V1.0
 
 [![Demo](https://img.youtube.com/vi/LpvGg0Jy8AY/0.jpg)](https://www.youtube.com/watch?v=LpvGg0Jy8AY)

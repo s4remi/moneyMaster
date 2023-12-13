@@ -6,24 +6,23 @@ import stateImg from "./assets/state-mgmt.png";
 export const CORE_CONCEPTS = [
   {
     image: componentsImg,
-    title: "Compatibilty",
-    description: "ability to add more accounts under a user acounts",
+    title: "Compatibility",
+    description: "Ability to add more accounts under a user accounts",
   },
   {
     image: jsxImg,
-    title: "STOCK",
-    description:
-      "Return (potentially dynamic) HTML(ish) to define the latest interest rates.",
+    title: "Activity Log",
+    description: "List of all modification and changes to bank accounts",
   },
   {
     image: propsImg,
     title: "Manage",
-    description: "Make access to bank accounts easier all at once",
+    description: "Access to all bank accounts at once",
   },
   {
     image: stateImg,
-    title: "State",
-    description: "connecting with a robust database",
+    title: "Data",
+    description: "have a robust database with 1.2K data",
   },
 ];
 

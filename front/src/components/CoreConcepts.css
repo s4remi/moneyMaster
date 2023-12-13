@@ -1,0 +1,24 @@
+#core-concepts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#core-concepts h2 {
+  color: #852d8d;
+  font-family: "Archivo", sans-serif;
+}
+
+#core-concepts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem; /* Adjust the gap between items as needed */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.core-concept-item {
+  flex: 1;
+  align-items: center;
+}

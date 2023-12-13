@@ -10,8 +10,8 @@ export default function Header() {
   return (
     <header>
       <img src={reactImg} alt="Stylized atom" />
-      <h1>Why MoneyMaster?!</h1>
-      <p>
+      <h1 className="header-title">Why MoneyMaster?!</h1>
+      <p className="header-description">
         {reactDescription[randomIntGen(2)]} Different usage of this application
       </p>
     </header>

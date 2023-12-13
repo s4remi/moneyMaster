@@ -9,19 +9,22 @@ header img {
   object-fit: cover;
 }
 
-header h1 {
+.header-title {
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 5rem;
-  background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
-  -webkit-background-clip: text;
+  background: linear-gradient(40deg, #852d8d, #ea00ff, #03d5ff, #03d5ff);
+  -webkit-background-clip: text; /* Safari/Chrome */
+  -moz-background-clip: text; /* Firefox */
+  background-clip: text; /* Standard */
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(224, 185, 185, 0.5));
+  filter: drop-shadow(0 2px 8px rgba(14, 49, 118, 0.457));
 }
 
-header p {
+.header-description {
   margin: 0;
   font-size: 1.25rem;
-  color: #8964b0;
-  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(42, 33, 104);
+  font-family: "Open Sans", sans-serif;
 }
