@@ -1,20 +1,32 @@
-# moneyMaster
+# MoneyMaster.
 
-moneyMaster is a managing application for bank accounts which gives a use an opportunity to, manage all their credit cards all at one place. an user can create/delete/modify/view his bank accounts.
+### Objective
 
-Createed by Ali Saremi
+this is project4 for NEU. I build a full stack application with Node + Express + Mongo + React (hooks). moneyMaster is a managing application for bank accounts which gives a use an opportunity to, manage all their credit cards all at one place. an user can create/delete/modify/view his bank accounts.
 
-### Design Document:
+### Author
 
-![main page](./data/Main.png)
-![login / register](./data/LoginPage.png)
-![edit page](./data/Editpage.png) ![data page](./data/Dataspage.png)
+Createed by [Ali Saremi](https://github.com/s4remi)
 
-#### slides:
+### Color Palette
 
-[Slides presentation](https://docs.google.com/presentation/d/1EPZiVV4H_JwtapBzgIOujojJo_Lgmi68OzKlkjXnTdI/edit?usp=sharing)
+![Colo palette](./data/color%20palette.png)
 
-## Demo
+### Fonts
+
+I have decided that I need to express a delightful and modern feeling for my MoneyMaster application, I need to use a vivid and cheerful fonts. Among many sans-serif fonts, I have chosen 'Archivo' for headers and 'Open Sans' for paragraph font
+
+### Usability Study Report
+
+[MoneyMaster Usability Study Report by Ali Saremi](https://docs.google.com/document/d/1AIqcdRl-wnfN80I4XupIXk56O9NsTg4uHPIJM_oSDyA/edit?usp=sharing)
+
+### Slides & Video & Design Document & Deployment Link
+
+[slides Here V2.0](https://docs.google.com/presentation/d/1vutD4xo3GU2k0lXprcuMneBcPIkr2KwSCDDq_WdG2Eo/edit?usp=sharing)
+
+[Slides Here V1.0](https://docs.google.com/presentation/d/1EPZiVV4H_JwtapBzgIOujojJo_Lgmi68OzKlkjXnTdI/edit?usp=sharing)
+
+## Demo V1.0
 
 [![Demo](https://img.youtube.com/vi/LpvGg0Jy8AY/0.jpg)](https://www.youtube.com/watch?v=LpvGg0Jy8AY)
 
@@ -68,9 +80,7 @@ npm start
   },
 ```
 
-//add html link
-
-### brief overview of the components:
+## Brief overview of the components:
 
 ### Server-Side (Node.js with Express):
 
