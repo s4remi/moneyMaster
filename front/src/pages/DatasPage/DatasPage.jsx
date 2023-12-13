@@ -1,17 +1,17 @@
 import { useContext } from "react";
 //import { ButtonVote } from "../components/ButtonVote";
 import { useState, useEffect } from "react";
-import { DatasGallery } from "../components/DatasGallery";
+import { DatasGallery } from "../../components/DatasGallery";
 //import { RangeWidth } from "../components/RangeWidth";
-import { SearchBar } from "../components/SearchBar";
-import BasePage from "./BasePage";
-import { ErrorContext } from "../main";
-import { useGetUser } from "../hooks/useGetUser";
-import { MainSc } from "../components/MainSc";
+import { SearchBar } from "../../components/SearchBar";
+import BasePage from "../BasePage";
+import { ErrorContext } from "../../main";
+import { useGetUser } from "../../hooks/useGetUser";
+import { MainSc } from "../../components/MainSc";
 //import { BankSummary } from "../components/BankSummary";
-import Header from "../components/Header/Header";
-import CoreConcepts from "../components/CoreConcepts";
-import Examples from "../components/Examples";
+import Header from "../../components/Header/Header";
+import CoreConcepts from "../../components/CoreConcepts";
+import Examples from "../../components/Examples";
 import { useNavigate } from "react-router-dom";
 
 export default function DatasPage() {
@@ -71,8 +71,6 @@ export default function DatasPage() {
   };
   return (
     <BasePage>
-      <h1>MoneyMaster Application</h1>
-
       {user ? (
         <>
           {/* <RangeWidth /> */}
@@ -87,16 +85,9 @@ export default function DatasPage() {
             onEdit={handleEdit}
             onDelete={handleDelete}
           ></DatasGallery>
-
-          {/* <ButtonVote name="Biden" /> */}
-          {/* <ButtonVote name="Trump" /> */}
         </>
       ) : (
         <div>
-          <em>
-            <span>Welcome To Money Master</span>
-          </em>
-
           <Header />
           <main>
             <CoreConcepts />
