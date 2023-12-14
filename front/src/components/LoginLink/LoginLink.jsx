@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { useGetUser } from "../hooks/useGetUser";
+import { useGetUser } from "../../hooks/useGetUser.jsx";
 import "./LoginLink.css";
 
 export function LoginLink() {
@@ -9,7 +9,7 @@ export function LoginLink() {
   return (
     <>
       {user ? (
-        <div>
+        <div className="loginSection">
           <p>Welcome: {user} </p>
           <button className="nav-link" onClick={onLogout}>
             Logout

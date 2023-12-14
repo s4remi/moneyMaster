@@ -11,7 +11,7 @@ header img {
 
 .header-title {
   margin: 0;
-  font-family: "Roboto Condensed", sans-serif;
+  /* font-family: "Roboto Condensed", sans-serif; */
   font-family: "Archivo", sans-serif;
   font-size: 5rem;
   background: linear-gradient(40deg, #852d8d, #ea00ff, #03d5ff, #03d5ff);

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LoginLink } from "../components/LoginLink.jsx";
+import { LoginLink } from "../components/LoginLink/LoginLink.jsx";
 
 export function AppNavBar() {
   return (

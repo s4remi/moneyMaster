@@ -1,8 +1,10 @@
-/* div {
+.loginSection {
   display: flex;
   align-items: center;
   color: brown;
+  /* font-family: "Archivo", sans-serif; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 p {
   margin-right: 1px;
-} */
+}

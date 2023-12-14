@@ -1,3 +1,4 @@
+import PropType from "prop-types";
 export default function TabButton({ children, isSelected, ...props }) {
   // add event listener
   return (
@@ -8,3 +9,9 @@ export default function TabButton({ children, isSelected, ...props }) {
     </li>
   );
 }
+TabButton.propTypes = {
+  children: PropType.node.isRequired,
+  onClick: PropType.func,
+  isSelected: PropType.bool,
+  ...PropType.object,
+};
