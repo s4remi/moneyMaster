@@ -1,11 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700");
+
 #core-concepts {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 #core-concepts h2 {
-  color: #852d8d;
+  color: #1a091b;
   font-family: "Archivo", sans-serif;
 }
 
@@ -14,11 +14,10 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 0.5rem; /* Adjust the gap between items as needed */
-  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .core-concept-item {
   flex: 1;
-  align-items: center;
 }

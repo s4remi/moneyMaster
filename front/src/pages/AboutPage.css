@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap");
+
+/* Open Sans font for paragraphs */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+}
+.about_container {
+  width: 100%;
+  padding: 50px 8%;
+}
+.about_contents {
+  /* font-family: "Archivo", sans-serif;  */
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.imageSection {
+  grid-area: imageSect;
+}
+.infoSection {
+  grid-area: infoSect;
+}
+
+.about_container .about_contents {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  row-gap: 70px;
+  column-gap: 70px;
+  grid-template-areas: "imageSect infoSect" "skillSect skillSect";
+}
+.about_contents .imageSection {
+  position: relative;
+  min-width: 300px;
+  height: 380px;
+}
+.imageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.about_contents .imageSection::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  outline: 3px solid #000000;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.infoSection h1 {
+  color: black;
+  font-family: "Archivo", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 5px;
+  position: relative;
+}
+.infoSection h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 110%;
+  left: 0;
+  background-color: #832161;
+}
+
+.infoSection h1::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  top: calc(110% -1px);
+  left: 0px;
+  background-color: #da4167;
+}
+.infoSection h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  padding: 14px 0px 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.infoSection p {
+  color: #3d2645;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: justify;
+  padding-bottom: 8px;
+}
+.personalInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 20px;
+  margin-top: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #da4167;
+}
+.personalInfo div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.personalInfo div span {
+  color: #3d2645;
+  letter-spacing: 1px;
+}
+.divbutton {
+  min-width: 200px;
+  padding: 8px 18px;
+  border: 1px solid #da4167;
+  border-radius: 25px;
+  font-size: 18px;
+
+  color: #3d2645;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-top: 20px;
+}
+.divbutton:hover {
+  color: #90a4ae;
+  border-color: #000000;
+}
+.divbutton button {
+  background: none;
+  width: 100%;
+}
+@media (max-width: 1068px) {
+  .about_container .about_contents {
+    grid-template-areas: "imageSect skillSect" "infoSect infoSect";
+  }
+}

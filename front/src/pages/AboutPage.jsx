@@ -1,26 +1,56 @@
 import BasePage from "./BasePage";
-import AboutImg from "../assets/about.png";
+import AboutImg from "../assets/personal.png";
+import "./AboutPage.css";
 
 export default function AboutPage() {
   return (
     <>
       <BasePage>
-        <h1> Who we are?</h1>{" "}
-        <div>
-          MC2 Tech isn't just an app development company; we are a collective of
-          visionaries and problem-solvers. Our commitment goes beyond writing
-          lines of code; it's about understanding your goals and translating
-          them into intuitive, user-centric applications. We're not just
-          developers; we're your technology partners in success.
+        <div className="about_container">
+          <div className="about_contents">
+            {/* image section starts*/}
+            <section className="imageSection">
+              <img src={AboutImg} alt="personal picture" />
+            </section>
+            <section className="infoSection">
+              <h1>About Me</h1>
+              <h2>
+                👋 Hi, I am currently a student in the Khoury College of
+                Computer Science at Northeastern University, San Francisco
+                campus.
+              </h2>
+              <p>
+                I am hoping to graduate in 2024. Prior to this, I earned my
+                B.Eng in civil Engineering and AS in Mathematics. I am highly
+                interested in most areas of computer science, with a particular
+                interest in computer graphics such as AR, VR, Visualization, and
+                Computer Vision.
+              </p>
+              <p>
+                I hope to maintain my passion for computer graphics and pursue
+                relevant job opportunities in the future. In addition to
+                computer graphics, I am also interested in backend development
+                technologies such as distributed systems and networking.
+              </p>
+              <div className="personalInfo">
+                <div>
+                  <span>Name:</span>
+                  <span>Ali Saremi</span>
+                </div>
+                <div>
+                  <span>Email:</span>
+                  <span>s4remi@gmail.com</span>
+                </div>
+              </div>
+              <div className="divbutton">
+                <button>
+                  <a href="https://ali-resume-html.onrender.com/">Portfolio</a>
+                </button>
+              </div>
+            </section>
+            {/* end of the info */}
+          </div>
         </div>
-        <h2> Other Production</h2>{" "}
-        <ul>
-          <li>eccomerce book store</li>
-          <li>Protein AR for andriod mobiles</li>
-        </ul>
-        <img src={AboutImg} alt="about png picture" />
-        <h2>Stuck price</h2>
-        <h2>News and Results</h2>
       </BasePage>
     </>
   );
