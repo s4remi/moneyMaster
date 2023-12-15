@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LoginLink } from "../components/LoginLink/LoginLink.jsx";
+import "./AppNavBar.css";
 
 export function AppNavBar() {
   return (

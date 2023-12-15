@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700");
+
+nav {
+  background-color: #3d2645;
+  font-family: "Archivo", sans-serif;
+}
+
+.nav-link {
+  color: #3d2645;
+}
+.navbar-brand {
+  color: #832161;
+}

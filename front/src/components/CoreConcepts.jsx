@@ -5,15 +5,15 @@ import "./CoreConcepts.css";
 
 export default function CoreConcepts() {
   return (
-    <section id="core-concepts">
-      <h2 style={{ color: "black", fontFamily: "Archivo" }} tabIndex="0">
-        Available Functions
-      </h2>
-      <ul>
-        {CORE_CONCEPTS.map((contentItem) => (
-          <CoreConcept key={contentItem.title} {...contentItem} />
-        ))}
-      </ul>
-    </section>
+    <div>
+      <h2>Available Functions</h2>
+      <section id="core-concepts">
+        <ul>
+          {CORE_CONCEPTS.map((contentItem) => (
+            <CoreConcept key={contentItem.title} {...contentItem} />
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 }

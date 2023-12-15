@@ -2,11 +2,15 @@
 
 #core-concepts {
   display: flex;
+  justify-content: center;
+  text-align: center;
 }
-
-#core-concepts h2 {
-  color: #1a091b;
+h2 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: #6a6c6f;
   font-family: "Archivo", sans-serif;
+  background-color: white;
 }
 
 #core-concepts ul {

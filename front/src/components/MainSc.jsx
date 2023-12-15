@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./MainSc.css";
 //import myDB from "../db/myMongoDB.js";
 
 export function MainSc() {
