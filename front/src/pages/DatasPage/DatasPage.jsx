@@ -11,7 +11,6 @@ import { MainSc } from "../../components/MainSc";
 //import { BankSummary } from "../components/BankSummary";
 import Header from "../../components/Header/Header";
 import CoreConcepts from "../../components/CoreConcepts";
-import Examples from "../../components/Examples";
 import { useNavigate } from "react-router-dom";
 
 export default function DatasPage() {
@@ -91,7 +90,6 @@ export default function DatasPage() {
           <Header />
           <main>
             <CoreConcepts />
-            <Examples />
           </main>
         </div>
       )}
