@@ -51,6 +51,10 @@ export function MainSc() {
     setShowForm(true);
   };
   return (
+
+    // Code Review: I would suggest consider adding placeholders in the form input fields
+    // And provide selectable options for inputs requiring a True/False or Date response
+    
     <>
       <button onClick={handleButtonClick} disabled={loading}>
         Create a new Bank account Info
